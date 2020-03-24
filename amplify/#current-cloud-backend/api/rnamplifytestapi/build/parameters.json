@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "rnamplifytestapi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "S3DeploymentBucket": "amplify-rnamplify-demo-123048-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/08835897cb51ea14d8e1b2d5e8542c3cb96e8720"
+}

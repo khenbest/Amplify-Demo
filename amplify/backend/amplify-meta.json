@@ -1,0 +1,65 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-rnamplify-demo-123048-authRole",
+			"UnauthRoleArn": "arn:aws:iam::716352134628:role/amplify-rnamplify-demo-123048-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::716352134628:role/amplify-rnamplify-demo-123048-authRole",
+			"Region": "eu-west-1",
+			"DeploymentBucketName": "amplify-rnamplify-demo-123048-deployment",
+			"UnauthRoleName": "amplify-rnamplify-demo-123048-unauthRole",
+			"StackName": "amplify-rnamplify-demo-123048",
+			"StackId": "arn:aws:cloudformation:eu-west-1:716352134628:stack/amplify-rnamplify-demo-123048/97f87f20-6dfd-11ea-ba9f-020b33be54b4",
+			"AmplifyAppId": "d1oenfrnyl9pog"
+		}
+	},
+	"api": {
+		"rnamplifytestapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "demo",
+							"apiKeyExpirationDays": "365"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "qugk4itz6ndafasfdn5mnrts44",
+				"GraphQLAPIEndpointOutput": "https://h3plzg2uvva3peb2zntfzt7udy.appsync-api.eu-west-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-ugyg4jhqgnbs3ofiulvkhxhtya"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-rnamplify-demo-123048-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apirnamplifytestapi"
+			},
+			"lastPushTimeStamp": "2020-03-24T19:05:01.868Z",
+			"lastPushDirHash": "3mK35aUKa/DmEYtgw8lxZSYvuTQ="
+		}
+	},
+	"auth": {
+		"rnamplifyd0a41a48": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false,
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-rnamplify-demo-123048-deployment/amplify-cfn-templates/auth/rnamplifyd0a41a48-cloudformation-template.yml",
+				"logicalId": "authrnamplifyd0a41a48"
+			},
+			"lastPushTimeStamp": "2020-03-24T19:05:01.874Z",
+			"output": {
+				"AppClientSecret": "psa33dvon0k98r4298r2la3fcp06rs98u8pocgp3t4egs9gvadd",
+				"UserPoolId": "eu-west-1_VbDMglud1",
+				"AppClientIDWeb": "1n5p4g1sft6t64dn2uooi8892l",
+				"AppClientID": "sfoj3iq8ulm3iohhl07p1phv",
+				"IdentityPoolId": "eu-west-1:3a5e5d88-bdb8-4178-bd69-fad8f381fc4e",
+				"IdentityPoolName": "rnamplifyd0a41a48_identitypool_d0a41a48__demo",
+				"UserPoolName": "rnamplifyd0a41a48_userpool_d0a41a48"
+			},
+			"lastPushDirHash": "BElsXFuKjatCQsUHxo1MTDXuhpY="
+		}
+	}
+}

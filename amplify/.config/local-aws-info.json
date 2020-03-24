@@ -1,0 +1,7 @@
+{
+    "demo": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "trial\\"
+    }
+}
