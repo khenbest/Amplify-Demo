@@ -26,10 +26,16 @@
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "address",
+        "birthdate",
+        "email",
+        "family_name",
+        "gender",
+        "name",
+        "phone_number"
     ],
     "userpoolClientLambdaRole": "rnampld0a41a48_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "resourceName": "rnamplifyd0a41a48",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
@@ -44,7 +50,19 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "userPoolGroupList": [],
-    "dependsOn": []
+    "useDefault": "manual",
+    "userPoolGroupList": [
+        "pool1"
+    ],
+    "dependsOn": [],
+    "thirdPartyAuth": true,
+    "authProviders": [],
+    "userPoolGroups": true,
+    "adminQueries": true,
+    "triggers": "{}",
+    "hostedUI": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }

@@ -1,14 +1,13 @@
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
 Amplify.configure(config);
-
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TextInput, Button } from "react-native";
-
 import { withAuthenticator } from "aws-amplify-react-native";
 import { API, graphqlOperation } from "aws-amplify";
 import { createTodo } from "./src/graphql/mutations";
 import { listTodos } from "./src/graphql/queries";
+import theme from "./theme.js";
 
 const initialState = { name: "", description: "" };
 
@@ -78,4 +77,47 @@ const styles = StyleSheet.create({
   todoName: { fontSize: 18 }
 });
 
-export default withAuthenticator(App);
+const Config = {
+  header: "True Care Sign Up",
+  hideAllDefaults: true,
+  defaultCountryCode: "1",
+  signUpFields: [
+    {
+      label: "Name",
+      key: "username",
+      required: true,
+      displayOrder: 1,
+      type: "string"
+    },
+    {
+      label: "Password",
+      key: "password",
+      required: true,
+      displayOrder: 2,
+      type: "password"
+    },
+    {
+      label: "Email",
+      key: "email",
+      required: true,
+      displayOrder: 3,
+      type: "string"
+    },
+    {
+      label: "PhoneNumber",
+      key: "phone_number",
+      required: true,
+      displayOrder: 4,
+      type: "string"
+    },
+    {
+      label: "Date of Birth",
+      key: "DOB",
+      required: true,
+      displayOrder: 5,
+      type: "string"
+    }
+  ]
+};
+
+export default withAuthenticator(App, true, [], null, theme, Config);

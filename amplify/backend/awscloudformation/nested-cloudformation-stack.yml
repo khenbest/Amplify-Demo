@@ -106,9 +106,9 @@
 					"userpoolClientGenerateSecret": true,
 					"userpoolClientRefreshTokenValidity": 30,
 					"userpoolClientWriteAttributes": "email",
-					"userpoolClientReadAttributes": "email",
+					"userpoolClientReadAttributes": "address,birthdate,email,family_name,gender,name,phone_number",
 					"userpoolClientLambdaRole": "rnampld0a41a48_userpoolclient_lambda_role",
-					"userpoolClientSetAttributes": false,
+					"userpoolClientSetAttributes": true,
 					"resourceName": "rnamplifyd0a41a48",
 					"authSelections": "identityPoolAndUserPool",
 					"authRoleArn": {
@@ -123,9 +123,64 @@
 							"Arn"
 						]
 					},
-					"useDefault": "default",
-					"userPoolGroupList": "",
+					"useDefault": "manual",
+					"userPoolGroupList": "pool1",
 					"dependsOn": "",
+					"thirdPartyAuth": true,
+					"authProviders": "",
+					"userPoolGroups": true,
+					"adminQueries": true,
+					"triggers": "{}",
+					"hostedUI": false,
+					"parentStack": {
+						"Ref": "AWS::StackId"
+					},
+					"permissions": "",
+					"env": "demo"
+				}
+			}
+		},
+		"authuserPoolGroups": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-rnamplify-demo-123048-deployment/amplify-cfn-templates/auth/template.json",
+				"Parameters": {
+					"AuthRoleArn": {
+						"Fn::GetAtt": [
+							"AuthRole",
+							"Arn"
+						]
+					},
+					"UnauthRoleArn": {
+						"Fn::GetAtt": [
+							"UnauthRole",
+							"Arn"
+						]
+					},
+					"authrnamplifyd0a41a48UserPoolId": {
+						"Fn::GetAtt": [
+							"authrnamplifyd0a41a48",
+							"Outputs.UserPoolId"
+						]
+					},
+					"authrnamplifyd0a41a48AppClientIDWeb": {
+						"Fn::GetAtt": [
+							"authrnamplifyd0a41a48",
+							"Outputs.AppClientIDWeb"
+						]
+					},
+					"authrnamplifyd0a41a48AppClientID": {
+						"Fn::GetAtt": [
+							"authrnamplifyd0a41a48",
+							"Outputs.AppClientID"
+						]
+					},
+					"authrnamplifyd0a41a48IdentityPoolId": {
+						"Fn::GetAtt": [
+							"authrnamplifyd0a41a48",
+							"Outputs.IdentityPoolId"
+						]
+					},
 					"env": "demo"
 				}
 			}
